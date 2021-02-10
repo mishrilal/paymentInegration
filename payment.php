@@ -11,7 +11,7 @@
     try {
         $response = $api->paymentRequestCreate(array(
                 "purpose" => "Donation",
-                "amount" => $amount,
+                "amount" => $amt,
                 "phone" => $mobile,
                 "buyer_name" => $name,
                 "send_email" => true,
