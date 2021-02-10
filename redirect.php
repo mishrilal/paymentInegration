@@ -35,10 +35,10 @@
                         <h2 style="text-align:center;"><i>Transaction Details</i></h2>
                     </div>
                     <div class="card-body bg-dark text-light">
-                        <p><b>Donar Name :</b> <?php echo htmlentities($response['payments'][0]['buyer_name']); ?></p>
-                        <p><b>Donar Email-ID:</b> <?php echo htmlentities($response['payments'][0]['buyer_email']); ?>
-                        </p>
-                        <p><b>Donated Amount:</b> <?php echo htmlentities($response['payments'][0]['amount']); ?></p>
+                        <p><b>Donar's Name :</b> <?php echo htmlentities($response['payments'][0]['buyer_name']); ?></p>
+                        <p><b>Donar's Email:</b> <?php echo htmlentities($response['payments'][0]['buyer_email']); ?></p>
+                        <p><b>Donar's Mobile No.:</b> <?php echo htmlentities($response['payments'][0]['buyer_phone']); ?></p>
+                        <p><b>Amount Donated:</b> <?php echo htmlentities($response['payments'][0]['amount']); ?></p>
                         <p><b>Payment ID:</b> <?php echo htmlentities($response['payments'][0]['payment_id']); ?></p>
                     </div>
                     <div class="card-footer">
@@ -62,10 +62,11 @@
                     $to = $response['payments'][0]['buyer_email'];
                     $subject ="Thank you for Donationg at GRIP Donatation";
                     
-                    $message = "Donar Name: " . $response['payments'][0]['buyer_name'] . "
-                    Donar Email: " . $response['payments'][0]['buyer_email'] . "
-                    Amounted Donated: " . $response['payments'][0]['amount'] . "
-                    Payment ID: " . $response['payments'][0]['payment_id'];
+                    $message = "<strong>Donar's Name: </strong>" . $response['payments'][0]['buyer_name'] . "<br>" . "
+                    <strong>Donar's Email: </strong>" . $response['payments'][0]['buyer_email'] . "<br>" . "
+                    <strong>Donar's Mobile No.: </strong>" . $response['payments'][0]['buyer_phone'] . "<br>" . "
+                    <strong>Amount Donated: </strong>" . $response['payments'][0]['amount'] . "<br>" . "
+                    <strong>Payment ID: </strong>" . $response['payments'][0]['payment_id'];
                     
                     $headers = "MIME-Version: 1.0" . "\r\n";
                     $headers .= "COntent-type:text/html; charset=UTF-8". "\r\n";
