@@ -15,6 +15,9 @@
     <br><br><br>
     <div class="container">
         <div class="col-xs-12 col-sm-2 offset-md-3 col-md-6">
+            <div class="offset-md-4">
+                <h2><i>GRIP Donation</i></h2>
+            </div>
             <form action="payment.php" method="post" class="tabletext">
                 <div class="form-group row">
                     <label class="text-dark col-md-3 col-form-label">Full Name:</label>

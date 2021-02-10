@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container mt-5">
         <?php 
                 include "payDetails.php";
 
@@ -32,7 +32,7 @@
             <div class="col-sm offset-md-3 col-md-6">
                 <div class="card" style="border-radius: 10px;">
                     <div class="card-header bg-dark text-light">
-                        <h2>Transaction Details</h2>
+                        <h2 style="text-align:center;"><i>Transaction Details</i></h2>
                     </div>
                     <div class="card-body bg-dark text-light">
                         <p><b>Donar Name :</b> <?php echo htmlentities($response['payments'][0]['buyer_name']); ?></p>
@@ -42,8 +42,14 @@
                         <p><b>Payment ID:</b> <?php echo htmlentities($response['payments'][0]['payment_id']); ?></p>
                     </div>
                     <div class="card-footer">
-                        <h4>Status: <?php echo htmlentities($response['status']); ?></h4>
+                        <h4 style="text-align:center;">Status: <?php echo htmlentities($response['status']); ?></h4>
                     </div>
+                </div>
+                <br>
+                <p style="text-align:center;">THANK YOU For Donating...</p>
+                <p style="text-align:center;">Transaction Details are sent to your Email address</p>
+                <div style="text-align:center;">
+                    <a href="index.php"><button class="btn btn-dark btn-outline-success">Donate More</button></a>
                 </div>
             </div>
         </div>
