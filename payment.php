@@ -5,8 +5,6 @@
     $amt = $_POST['amount'];
 
     include "payDetails.php";
-    include "instamojo/Instamojo.php";
-    $api = new instamojo\Instamojo("$pubKey", "$secKey","https://test.instamojo.com/api/1.1/");
 
     try {
         $response = $api->paymentRequestCreate(array(
@@ -18,11 +16,10 @@
                 "email" => $email,
                 "send_sms" => true,
                 "allow_repeated_payments" => false,
-                "redirect_url" => "http://localhost/Baburam/redirect.php",
-            //	"webhook" => "http://localhost/Donationgateway-master/redirect.php",
+                "redirect_url" => "http://localhost/paymentIntegration/redirect.php",
+            	"webhook" => "http://localhost/paymentIntegration/redirect.php",
     
                 ));
-             // print_r($response);
              $pay_url = $response['longurl'];
              header("location:$pay_url");
            }
