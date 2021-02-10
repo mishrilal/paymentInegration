@@ -47,14 +47,32 @@
                 </div>
                 <br>
                 <p style="text-align:center;">THANK YOU For Donating...</p>
-                <p style="text-align:center;">Transaction Details are sent to your Email address</p>
+                <p style="text-align:center;">Transaction Details has been sent to your Email address</p>
                 <div style="text-align:center;">
                     <a href="index.php"><button class="btn btn-dark btn-outline-success">Donate More</button></a>
                 </div>
             </div>
         </div>
 
+
+
+
         <?php  
+        // <!-- SENDING EMAIL -->
+                    $to = $response['payments'][0]['buyer_email'];
+                    $subject ="Thank you for Donationg at GRIP Donatation";
+                    
+                    $message = "Donar Name: " . $response['payments'][0]['buyer_name'] . "
+                    Donar Email: " . $response['payments'][0]['buyer_email'] . "
+                    Amounted Donated: " . $response['payments'][0]['amount'] . "
+                    Payment ID: " . $response['payments'][0]['payment_id'];
+                    
+                    $headers = "MIME-Version: 1.0" . "\r\n";
+                    $headers .= "COntent-type:text/html; charset=UTF-8". "\r\n";
+                    $headers .= 'From: <thankyou@grip.donation>' . "\r\n";
+                    
+                    mail($to, $subject, $message, $headers);
+
                 } 
                 catch (Exception $e) {
                     print('Error: ' . $e->getMessage());
