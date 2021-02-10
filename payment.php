@@ -17,7 +17,7 @@
                 "send_sms" => true,
                 "allow_repeated_payments" => false,
                 "redirect_url" => "http://localhost/paymentIntegration/redirect.php",
-            	"webhook" => "http://localhost/paymentIntegration/redirect.php",
+            	// "webhook" => "http://localhost/paymentIntegration/redirect.php",
     
                 ));
              $pay_url = $response['longurl'];
