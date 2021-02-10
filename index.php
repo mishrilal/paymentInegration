@@ -15,7 +15,7 @@
         <br><br><br>
         <div class="container">
             <div class="col-xs-12 col-sm-2 offset-md-3 col-md-6">
-                <form action = "paynow.php" method="post" class="tabletext">
+                <form action = "payment.php" method="post" class="tabletext">
                     <div class="form-group row">
                         <label class = "text-dark col-md-3 col-form-label">Full Name:</label>
                         <div class="col-md-9">
@@ -26,6 +26,11 @@
                         <label class = "text-dark col-md-3 col-form-label">Email:</label>
                         <div class="col-md-9">
                             <input type="email" class = "form-control" id="email" name="email" placeholder="johndoe@email.xyz" required>
+                        </div>
+                    </div><div class="form-group row">
+                        <label class = "text-dark col-md-3 col-form-label">Mobile No:</label>
+                        <div class="col-md-9">
+                            <input type="tel" class = "form-control" id="mobile" name="mobile" placeholder="9876543210" required>
                         </div>
                     </div>
                     <div class="form-group row">
